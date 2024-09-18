@@ -1,5 +1,9 @@
-function get_anagram() {
-    return "a"
+function is_anagram(word1, word2) {
+    if (word1.length != word2.length) {
+        return false
+    }
+    
+    return true
 }
 
-module.exports = get_anagram;
+module.exports = is_anagram;

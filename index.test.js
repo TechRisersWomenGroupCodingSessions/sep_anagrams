@@ -1,9 +1,13 @@
-const get_anagram = require('./index');
+const is_anagram = require('./index');
 
-test('test setup correct', () => {
-    expect(get_anagram()).toBe("a");
+test('is anagram', () => {
+    expect(is_anagram("kinship", "pinkish")).toBe(true);
 });
 
-test('test fail', () => {
-    expect(get_anagram()).toBe("b");
+test('is not anagram due to length', () => {
+    expect(is_anagram("kinship", "pinkishhh")).toBe(false);
+});
+
+test('is not anagram due to different char', () => {
+    expect(is_anagram("kinship", "pinkisx")).toBe(false);
 });
