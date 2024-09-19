@@ -1,5 +1,14 @@
+const fs = require('node:fs');
+
+
+function getWords() {
+    const data = fs.readFileSync('words.txt', 'utf8');
+    return data;
+}
+
+
 function is_anagram(word1, word2) {
-    if (word1.length != word2.length) {
+    if (word1.length !== word2.length) {
         return false
     }
 
@@ -9,7 +18,7 @@ function is_anagram(word1, word2) {
     const word1Sorted = word1Arr.toString()
     const word2Sorted = word2Arr.toString()
 
-    if (word1Sorted == word2Sorted){
+    if (word1Sorted === word2Sorted){
         return true
     }
     else{
@@ -18,4 +27,4 @@ function is_anagram(word1, word2) {
 
 }
 
-module.exports = is_anagram;
+module.exports = {is_anagram, getWords};
